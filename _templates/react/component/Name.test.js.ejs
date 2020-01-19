@@ -1,0 +1,10 @@
+---
+to: src/components/<%= h.inflection.classify(name) %>/<%= h.inflection.classify(name) %>.test.js
+---
+import React from "react";
+import { shallow } from "enzyme";
+import <%= h.inflection.classify(name) %> from "./<%= h.inflection.classify(name) %>";
+
+it("renders without crashing", () => {
+  shallow(<<%= h.inflection.classify(name) %> />);
+});

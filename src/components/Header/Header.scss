@@ -1,0 +1,55 @@
+@import "utils/_helpers.scss";
+
+nav {
+  background: skyblue;
+  .header {
+    @include flex-vertical-center;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1800px;
+
+    .spacer {
+      flex-grow: 1;
+    }
+
+    .links {
+      display: flex;
+      a,
+      button {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        text-align: center;
+        padding: 12px 24px;
+        line-height: 75px;
+        min-width: 70px;
+        &:hover {
+          background: rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+        }
+        &:not(:last-child) {
+          margin-right: 12px;
+        }
+      }
+    }
+
+    .languages {
+      position: absolute;
+      text-align: center;
+      margin-top: -3px;
+      padding: 6px 12px;
+      right: 50px;
+      top: 0;
+      font-size: 15px;
+      background: grey;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+---
+to: src/contexts/<%= h.inflection.camelize(name, true) %>Context/<%= h.inflection.camelize(name, true) %>Factory.js
+---
+import { updater } from "utils/updater";
+
+/**
+ * <%= h.inflection.humanize(name) %> API factory.
+ *
+ */
+export function <%= h.inflection.camelize(name, true) %>Factory({ state, setState }) {
+  // shorthand for setState(produce(draft => {...}))
+  const updateState = updater(setState);
+
+  const setValue = value => 
+    updateState(draft => void (draft.value = value))
+
+  const getValue = () => state.value;
+
+  return { setValue, getValue };
+}
+
+export default <%= h.inflection.camelize(name, true) %>Factory;

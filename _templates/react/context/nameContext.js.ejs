@@ -1,0 +1,21 @@
+---
+to: src/contexts/<%= h.inflection.camelize(name, true) %>Context/<%= h.inflection.camelize(name, true) %>Context.js
+---
+
+import { useStore } from "utils/useStore";
+import <%= h.inflection.camelize(name, true) %>Factory from "./<%= h.inflection.camelize(name, true) %>Factory";
+
+const initialState = () => ({
+    value: 0
+});
+
+const [<%= h.inflection.classify(name) %>Provider, use<%= h.inflection.classify(name) %>, with<%= h.inflection.classify(name) %>] = useStore(
+  <%= h.inflection.camelize(name, true) %>Factory,
+  initialState
+);
+
+export const <%= h.inflection.camelize(name, true) %>InitState = initialState();
+
+export { use<%= h.inflection.classify(name) %>, <%= h.inflection.classify(name) %>Provider, with<%= h.inflection.classify(name) %> };
+
+export default <%= h.inflection.classify(name) %>Provider;
